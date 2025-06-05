@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+    <h1 id="uID"></h1>
     <label for="id">Id:</label>
     <input type="text" id="id" name="id">
     <button type="button" id="Connect">Connect</button><br>
@@ -13,7 +14,14 @@
     <script>
       let peer = new Peer();
       peer.on("open", function (id) {
-          alert(`Your id is ${id}, use this to connect to another chatter by sending them your id.`);
+          if (localStorage.getItem("uID") == null) {
+          document.getElementById("uID").innerHTML = `Your id is ${id}, use this to connect to another chatter by sending them your id.`;
+            localStorage.setItem("uID", id);
+          }
+          else {
+            id = localStorage.getItem("uID");
+            document.getElementById("uID").innerHTML = `Your id is ${id}, use this to connect to another chatter by sending them your id.`;
+          }
       });
       document.getElementById("Connect").addEventListener("click", function () {
         let peerID = document.getElementById("id").value;
