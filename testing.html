@@ -9,13 +9,17 @@
     <label for="id">Id:</label>
     <input type="text" id="id" name="id">
     <button type="button" id="Connect">Connect</button><br>
+    <label for="mes">Message:</label>
+    <input type="text" id="mes" name="mes">
+    <button type="button" id="SendMem">Send</button><br>
     <p id="rcon"></p>
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
     <script>
       let peer = new Peer();
+      let peerID = ""
       peer.on("open", function (id) {
           if (localStorage.getItem("uID") == null) {
-          document.getElementById("uID").innerHTML = `Your id is ${id}, use this to connect to another chatter by sending them your id.`;
+            document.getElementById("uID").innerHTML = `Your id is ${id}, use this to connect to another chatter by sending them your id.`;
             localStorage.setItem("uID", id);
           }
           else {
@@ -24,10 +28,18 @@
           }
       });
       document.getElementById("Connect").addEventListener("click", function () {
-        let peerID = document.getElementById("id").value;
+        peerID = document.getElementById("id").value;
+        console.log(peerID)
         let conn = peer.connect(peerID);
         conn.on("open", function () {
-          conn.send("Testing");
+          conn.send("testing");
+          document.getElementById("rcon").innerHTML = "Successful connection, this ID works!";
+        });
+      });
+      document.getElementById("SendMem").addEventListener("click", function () {
+        let conn = peer.connect(peerID);
+        conn.on("open", function () {
+          conn.send(document.getElementById("mes"));
         });
       });
       peer.on("connection", function (conn) {
@@ -35,7 +47,7 @@
         conn.on("open", function () {
           conn.on("data", function (data) {
             console.log("Recieved", data);
-            document.getElementById("rcon").innerHTML = ""
+            document.getElementById("rcon").innerHTML = "";
           });
         });
       });
