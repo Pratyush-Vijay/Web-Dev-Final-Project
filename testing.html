@@ -5,28 +5,40 @@
     <title>Testing Branch</title>
   </head>
   <body>
+    <h1 id="uID"></h1>
     <label for="id">Id:</label>
     <input type="text" id="id" name="id">
     <button type="button" id="Connect">Connect</button><br>
+    <label for="mess">Message:</label>
+    <input type="text" id="mess" name="mess">
+    <button type="button" id="senMes">Send Message</button><br>
     <p id="rcon"></p>
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
     <script>
       let peer = new Peer();
+      let peerID = "";
       peer.on("open", function (id) {
-          alert(`Your id is ${id}, use this to connect to another chatter by sending them your id.`);
+          document.getElementById("uID").innerHTML = `Your id is ${id}, use this to connect to another chatter by sending them your id.`;
       });
       document.getElementById("Connect").addEventListener("click", function () {
-        let peerID = document.getElementById("id").value;
+        peerID = document.getElementById("id").value;
         let conn = peer.connect(peerID);
         conn.on("open", function () {
           conn.send("Testing");
+          document.getElementById("rcon").innerHTML = "Connection made, this will be the chat window (TEMP)";
+        });
+      });
+      document.getElementById("senMes").addEventListener("click", function () {
+        let conn = peer.connect(peerID);
+        conn.on("open", function () {
+          conn.send(document.getElementById("mess").value);
         });
       });
       peer.on("connection", function (conn) {
         document.getElementById("rcon").innerHTML = "Incoming connection!";
         conn.on("open", function () {
           conn.on("data", function (data) {
-            console.log("Recieved", data);
+            document.getElementById("rcon").innerHTML = data;
           });
         });
       });
