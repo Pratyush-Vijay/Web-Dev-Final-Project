@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
     <script>
       let peer = new Peer();
-      let peerID = "";messagez
+      let peerID = "";
       peer.on("open", function (id) {
           document.getElementById("uID").innerHTML = `Your id is ${id}, use this to connect to another chatter by sending them your id.`;
       });
