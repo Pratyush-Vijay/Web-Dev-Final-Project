@@ -30,26 +30,29 @@
                 Example:
             </p>
                 <div class="d-flex">
-                    <!-- Chat sidebar -->
-                    <div class="chat-sidebar bg-dark">
-                    <div class="chat-messages" id="chatBox">
-                        <!-- Static placeholder messages -->
-                        <div class="chat-message">Hey</div>
-                        <div class="chat-message user">Whats your name?</div>
-                        <div class="chat-message">I'm gurt</div>
-                        <div class="chat-message user">Yo gurt 💻</div>
-                        <!-- add up to 20 of these if you want more placeholders -->
-                    </div>
-                    <div class="chat-input p-3 border-top">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Type a message..." id="messageInput">
-                            <button class="btn btn-primary" type="button" id="sendButton">Send</button>
-                        </div>
-                    </div>
-                    <div class="p-3 border-top">
-                        <button type="button" class="btn btn-danger" id="disconnectBtn">Disconnect</button>
-                    </div>
-                </div>
+    <!-- Chat sidebar -->
+    <div class="chat-sidebar bg-dark">
+        <div class="chat-messages" id="chatBox">
+            <!-- Static placeholder messages -->
+            <ul class="chat-message-list">
+                <li class="chat-message">Hey</li>
+                <li class="chat-message user">What's your name?</li>
+                <li class="chat-message">I'm Gurt</li>
+                <li class="chat-message user">Yo Gurt 💻</li>
+                <!-- Add up to 20 of these if you want more placeholders -->
+            </ul>
+        </div>
+        <div class="chat-input p-3 border-top">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Type a message..." id="messageInput">
+                <button class="btn btn-primary" type="button" id="sendButton">Send</button>
+            </div>
+        </div>
+        <div class="p-3 border-top">
+            <button type="button" class="btn btn-danger" id="disconnectBtn">Disconnect</button>
+        </div>
+    </div>
+</div>
         </div>
     </body>
 
