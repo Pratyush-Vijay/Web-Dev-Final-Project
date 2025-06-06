@@ -64,3 +64,19 @@ body, html {
   margin: auto;
   width: 50%;
 }
+.col-md-2{
+  width: 1px;
+  height: 10px;
+}
+.col-md-5{
+  position: relative;
+  top: 100px;
+  border: 1px solid rgb(35, 39, 72);
+  background-color: #7a98bf;
+  height: 150px;
+  padding: 15px;
+  margin: auto;
+  font-size: 20px;
+  text-align: center;
+
+}
