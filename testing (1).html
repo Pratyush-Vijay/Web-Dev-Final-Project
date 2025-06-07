@@ -42,7 +42,6 @@
         document.getElementById("rcon").innerHTML = "Incoming connection!";
         conn.on("open", function () {
           conn.on("data", function (data) {
-            document.getElementById("rcon").innerHTML = data;
             let memHis = document.createElement("li");
             //memHis.setAttribute("id", memLen);
             memHis.appendChild(document.createTextNode(data));
