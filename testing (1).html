@@ -44,7 +44,7 @@
           conn.on("data", function (data) {
             document.getElementById("rcon").innerHTML = data;
             let memHis = document.createElement("li");
-            memHis.setAttribute("id", memLen);
+            //memHis.setAttribute("id", memLen);
             memHis.setAttribute("innerHTML", data);
             document.getElementById("memHis").appendChild(memHis);
           });
