@@ -45,7 +45,7 @@
             document.getElementById("rcon").innerHTML = data;
             let memHis = document.createElement("li");
             //memHis.setAttribute("id", memLen);
-            memHis.setAttribute("innerHTML", data);
+            memHis.appendChild(documet.createTextNode(data));
             document.getElementById("memHis").appendChild(memHis);
           });
         });
