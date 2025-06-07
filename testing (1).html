@@ -28,7 +28,6 @@
         peerID = document.getElementById("id").value;
         let conn = peer.connect(peerID);
         conn.on("open", function () {
-          conn.send("Testing");
           document.getElementById("rcon").innerHTML = "Connection made, this will be the chat window (TEMP)";
         });
       });
