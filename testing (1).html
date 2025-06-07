@@ -18,6 +18,7 @@
     </ul>
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
     <script>
+      let memLen = 0;
       let peer = new Peer();
       let peerID = "";
       peer.on("open", function (id) {
@@ -43,6 +44,9 @@
           conn.on("data", function (data) {
             document.getElementById("rcon").innerHTML = data;
             let memHis = document.createElement("li");
+            memHis.setAttribute("id", memLen);
+            memHis.setAttribute("innerHTML", data);
+            document.getElementById("memHis").appendChild(memHis);
           });
         });
       });
