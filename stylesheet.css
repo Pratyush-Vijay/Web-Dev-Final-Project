@@ -68,7 +68,7 @@ body, html {
   position: relative;
   top: 100px;
   border: 1px solid rgb(35, 39, 72);
-  background-color: #7a98bf;
+  background-image: radial-gradient(#8099b9,#a2bee2);
   height: 200px;
   padding: 10px;
   width: 550px;
@@ -81,7 +81,7 @@ body, html {
   font-size: 22px;
 }
 .navbar-brand{
-  background-color: #6382ab;
+  background-image: radial-gradient(#8099b9,#a2bee2);
   border: 4px solid #213555;
   padding-left: 80px;
   padding-right: 80px;
@@ -106,7 +106,7 @@ body, html {
   position: relative;
   top: 100px;
   border: 1px solid rgb(35, 39, 72);
-  background-color: #7a98bf;
+  background-image: radial-gradient(#8099b9,#a2bee2);
   height: 200px;
   padding: 10px;
   width: 550px;
