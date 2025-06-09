@@ -60,23 +60,27 @@ body, html {
   width: 100%;
   text-align: center;
 }
-.container{
+.textBox{
   margin: auto;
   width: 50%;
 }
 .col-md-2{
   width: 1px;
-  height: 10px;
+  height: 1px;
 }
 .col-md-5{
   position: relative;
   top: 100px;
   border: 1px solid rgb(35, 39, 72);
   background-color: #7a98bf;
-  height: 150px;
-  padding: 15px;
+  height: 200px;
+  padding: 10px;
+  width: 550px;
   margin: auto;
   font-size: 20px;
   text-align: center;
-
+  box-shadow: 8px 8px 8px 3px;
+}
+.manualText{
+  font-size: 22px;
 }
